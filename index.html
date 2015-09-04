@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			#penguin{
+				width: 136px;
+				height: 179px;
+				margin: 0 auto;
+				margin-top:100px;
+				position: relative;
+			}
+			#penguin div{
+				background-image: url(penguin_loading.png);
+			}
+			.penguin_content{
+				width: 136px;
+				height: 179px;
+				z-index: 100;
+				position: relative;
+			}
+			#penguin .penguin_hand1{
+				width: 37px;
+				height: 52px;
+				background-position: -140px 0;
+				position: absolute;
+				top: 80px;
+				left: -25px;
+				z-index: 0;
+			}
+			#penguin .penguin_hand2{
+				width: 46px;
+				height: 85px;
+				background-position: -142px -60px;
+				position: absolute;
+				top: 30px;
+				right: -30px;
+				z-index: 0;
+			}
+			
+			#penguin .penguin_foot1{
+				width: 60px;
+				height: 15px;
+				background-position: -140px -150px;
+				position: absolute;
+				bottom: -5px;
+				left: 0;
+				z-index: 0;
+			}
+			#penguin .penguin_foot2{
+				width: 60px;
+				height: 15px;
+				background-position: -140px -168px;
+				position: absolute;
+				bottom: -5px;
+				right: 0;
+				z-index: 0;
+			}
+			.penguin_shaow{
+				width: 180px;
+				height: 35px;
+				background: rgba( 000,000,000,0.5 );
+				border-radius: 100%;
+				position: absolute;
+				top: 265px;
+				left: 50%;
+				margin-left: -90px;
+				z-index: -10;
+			}
+			
+			#penguin{
+				-webkit-animation: jump 1.5s linear infinite;
+				-webkit-transform-origin: 50% 100%;
+			}	
+			.penguin_hand1{
+				-webkit-animation: rotate_hand1 1s linear infinite;
+				-webkit-transform-origin: 100% 0;
+			}		
+			.penguin_hand2{
+				-webkit-animation: rotate_hand2 1.5s linear infinite;
+				-webkit-transform-origin: 0 100%;
+			}
+			.penguin_foot1{
+				-webkit-animation: penguin_foot 1.5s linear infinite;
+				-webkit-transform-origin: 100% 0;
+			}	
+			.penguin_foot2{
+				-webkit-animation: penguin_foot2 1.5s linear infinite;
+				-webkit-transform-origin: 0 0;
+			}	
+			.penguin_shaow{
+				-webkit-animation: penguin_shaow 1.5s linear infinite;
+			}	
+			
+			@-webkit-keyframes jump{
+				0%{
+					-webkit-transform: translateY(0);
+				}
+				40%{
+					-webkit-transform: translateY(0);
+				}
+				45%{
+					-webkit-transform: translateY(-10px);
+					-webkit-transform: scale(1.1,0.9);
+				}
+				50%{
+					-webkit-transform: translateY(-20px);
+					-webkit-transform: scale(0.9,1.1);
+				}
+				55%{
+					-webkit-transform: scale(1,1);
+					-webkit-transform: translateY(-50px);
+				}
+				70%{
+					-webkit-transform: translateY(-50px);
+				}
+				80%{
+					-webkit-transform: translateY(0);
+					-webkit-transform: scale(1.1,0.9);
+				}
+				85%{
+					-webkit-transform: translateY(0);
+					-webkit-transform: scale(1,1);
+				}
+				100%{
+					-webkit-transform: translateY(0);
+				}
+				
+			}
+			
+			@-webkit-keyframes rotate_hand1{
+				0%{
+					-webkit-transform: rotate(0);
+				}
+				50%{
+					-webkit-transform: rotate(10deg);
+				}
+				100%{
+					-webkit-transform: rotate(0);
+				}
+				
+			}
+			
+			@-webkit-keyframes rotate_hand2{
+				0%{
+					-webkit-transform: rotate(0);
+				}
+				40%{
+					-webkit-transform: rotate(-10deg);
+				}
+	
+				50%{
+					-webkit-transform: rotate(-20deg);
+				}
+				55%{
+					-webkit-transform: translateY(-10px);
+				}
+				60%{
+					-webkit-transform: translateY(0px);
+				}
+				65%{
+					-webkit-transform: translateY(-10px);
+				}
+				70%{
+					-webkit-transform: translateY(0);
+				}
+				80%{
+					-webkit-transform: rotate(-10deg);
+				}
+				100%{
+					-webkit-transform: rotate(0deg);
+				}
+			
+			}
+			
+			@-webkit-keyframes penguin_foot{
+				0%{
+					-webkit-transform: rotate(0);
+				}
+				40%{
+					-webkit-transform: rotate(0);
+				}
+	
+				50%{
+					-webkit-transform: rotate(0);
+				}
+				55%{
+					-webkit-transform: rotate(-30deg);
+				}
+				60%{
+					-webkit-transform: rotate(0);
+				}
+				65%{
+					-webkit-transform: rotate(-30deg);
+				}
+				70%{
+					-webkit-transform: rotate(0);
+				}
+				80%{
+					-webkit-transform: rotate(0);
+				}
+				100%{
+					-webkit-transform: rotate(0);
+				}
+			
+			}
+			
+			@-webkit-keyframes penguin_foot2{
+				0%{
+					-webkit-transform: rotate(0);
+				}
+				40%{
+					-webkit-transform: rotate(0);
+				}
+	
+				50%{
+					-webkit-transform: rotate(0);
+				}
+				55%{
+					-webkit-transform: rotate(30deg);
+				}
+				60%{
+					-webkit-transform: rotate(0);
+				}
+				65%{
+					-webkit-transform: rotate(30deg);
+				}
+				70%{
+					-webkit-transform: rotate(0);
+				}
+				80%{
+					-webkit-transform: rotate(0);
+				}
+				100%{
+					-webkit-transform: rotate(0);
+				}
+			
+			}
+			
+			
+			@-webkit-keyframes penguin_shaow{
+				0%{
+					-webkit-transform: scale(1,1);
+				}
+				40%{
+					-webkit-transform: scale(1,1);
+				}
+	
+	
+				55%{
+					-webkit-transform: scale(0.7,0.7);
+				}
+
+				70%{
+					-webkit-transform: scale(0.7,0.7);
+				}
+				80%{
+					-webkit-transform: scale(1,1);
+				}
+				100%{
+					-webkit-transform: scale(1,1);
+				}
+			
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<div id="penguin">
+			<div class="penguin_hand1"></div>
+			<div class="penguin_hand2"></div>
+			<div class="penguin_foot1"></div>
+			<div class="penguin_foot2"></div>
+			<div class="penguin_content"></div>
+		</div>
+		<div class="penguin_shaow"></div>
+	</body>
+</html>
