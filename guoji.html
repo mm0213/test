@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<canvas id="mycanvas" width="1000" height="1000">不支持</canvas>
+		<script>
+			var canvas=document.getElementById("mycanvas");
+			var context=canvas.getContext("2d");
+			
+			context.rect(0,0,500,300);
+			context.fillStyle="#f00";
+			context.fill();
+			
+			//星星的函数
+			context.fillStarts=function(x,y,R){
+				this.beginPath();
+				this.moveTo(x,y-R);
+				this.lineTo(x-R*0.6,y+R*0.8);
+				this.lineTo(x+R*0.95,y-R*0.3);
+				this.lineTo(x-R*0.95,y-R*0.3);
+				this.lineTo(x+R*0.6,y+R*0.8);
+				this.lineTo(x,y-R);
+				this.fillStyle="#ff0";
+				this.fill();
+
+			}
+			context.fillStarts(70,90,50);
+			context.fillStarts(140,50,10);
+			context.fillStarts(155,80,10);
+			context.fillStarts(155,110,10);
+			context.fillStarts(130,140,10);
+
+			
+
+
+
+
+
+		</script>
+	</body>
+</html>
